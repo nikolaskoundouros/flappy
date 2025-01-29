@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        .navbar {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        .screen {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            z-index: 2;
+        }
+        .screen img {
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #ff4500;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #gameOverScreen {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div id="lives">Lives: 3</div>
+        <div id="score">Score: 0</div>
+    </div>
+    <div class="screen" id="startScreen">
+        <div>
+            <img src="logo.png" alt="Flappy Bird Logo">
+            <button id="startButton">Start Game</button>
+        </div>
+    </div>
+    <div class="screen" id="gameOverScreen">
+        <div>
+            <h1>Game Over</h1>
+            <div>
+                <h3>Highscore: <span id="highScoreDisplay">0</span></h3>
+                <h3>Current Score: <span id="currentScoreDisplay">0</span></h3>
+            </div>
+            <button id="playAgainButton">Play Again</button>
+        </div>
+    </div>
+    <canvas id="gameCanvas"></canvas>
+    <script src="game.js"></script>
+</body>
+</html>
